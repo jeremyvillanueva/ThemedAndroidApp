@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -52,11 +53,16 @@ public class ThemeSampleActivity extends AppCompatActivity
         toolbar.setTitleTextColor(textColorOverMainColor);
         toolbar.setBackgroundColor(mBranding.getColorMainColor());
         Drawable navIcon = getDrawable(R.drawable.menu_icon);
-        navIcon.setTint(Color.BLACK);
-        navIcon.setAlpha(255);
-        navIcon.setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
-        toolbar.setNavigationIcon(navIcon);
-        toolbar.getOverflowIcon().setTint(textColorOverMainColor);
+        if (navIcon != null) {
+            navIcon.setTint(Color.BLACK);
+            navIcon.setAlpha(255);
+            navIcon.setColorFilter(Color.BLACK, PorterDuff.Mode.MULTIPLY);
+            toolbar.setNavigationIcon(navIcon);
+            Drawable overflowIconDrawable = toolbar.getOverflowIcon();
+            if (overflowIconDrawable != null) {
+                overflowIconDrawable.setTint(textColorOverMainColor);
+            }
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +76,7 @@ public class ThemeSampleActivity extends AppCompatActivity
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.setDrawerListener(toggle);
+        drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -144,7 +150,7 @@ public class ThemeSampleActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
