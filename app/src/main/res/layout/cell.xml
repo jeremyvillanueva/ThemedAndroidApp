@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:folding-cell="http://schemas.android.com/apk/res-auto">
+
+    <com.ramotion.foldingcell.FoldingCell
+
+        android:id="@+id/folding_cell_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        folding-cell:additionalFlipsCount="2"
+        folding-cell:animationDuration="1300"
+        folding-cell:backSideColor="@color/bgBackSideColor"
+        folding-cell:cameraHeight="30">
+
+        <!-- CONTENT (UNFOLDED) LAYOUT (MUST BE AT LEAST 2x times BIGGER than content layout bellow)-->
+        <include
+            android:id="@+id/cell_content"
+            layout="@layout/cell_content_layout" />
+
+        <!-- TITLE (FOLDED) LAYOUT (MUST BE AT LEAST 2x times SMALLER than content layout above) -->
+        <include
+            android:id="@+id/cell_title"
+            layout="@layout/cell_title_layout" />
+
+    </com.ramotion.foldingcell.FoldingCell>
+</layout>

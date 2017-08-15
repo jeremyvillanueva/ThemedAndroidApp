@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <color name="colorLightShade">#F2F3EE</color>"
+    <color name="colorLightAccent">#7B9288</color>
+    <color name="colorMainColor">#84BB62</color>
+    <color name="colorDarkAccent">#846E5D</color>"
+    <color name="colorDarkShade">#2D3B33</color>
+    <color name="colorLightMainBackground">#F7F7F7</color>
+    <color name="colorDarkMainBackground">#404040</color>
+
+
+    <!--Folding List Start-->
+    <color name="colorPrimary">@color/colorMainColor</color>
+    <color name="colorPrimaryDark">@color/colorMainColor</color>
+    <color name="bgBackSideColor">@color/colorLightShade</color>
+    <color name="bgTitleLeft">@color/colorMainColor</color>
+    <color name="bgTitleRight">#ffffff</color>
+    <color name="bgContentTop">@color/colorLightAccent</color>
+    <color name="bgContent">#ffffff</color>
+    <color name="contentDividerLine">@color/colorLightShade</color>
+    <color name="contentBadgeTitle">#ffffff</color>
+    <color name="titleBadgeTitle">#ffffff</color>
+    <color name="titleBadgeText">#ffffff</color>
+    <color name="mainTextColor">@color/colorDarkShade</color>
+    <color name="btnRequest">@color/colorMainColor</color>
+    <color name="black_overlay">#66000000</color>
+    <!--Folding List End-->
+
+    <!--Folding TabBar Start-->
+    <color name="colorAccent">@color/colorLightAccent</color>
+    <color name="color_chat_item">@color/colorMainColor</color>
+    <color name="color_chat_user_name">@color/colorDarkAccent</color>
+    <color name="color_small_text">#FFFFFF</color>
+    <color name="ftb_main_color" tools:override="true">@color/colorMainColor</color>
+    <!--Folding TabBar End-->
+
+
+
+
+
+</resources>

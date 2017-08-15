@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="nz.co.tsg.themedapp.ui.colorpicker.ColorPickerActivity"
+    tools:showIn="@layout/activity_color_picker">
+
+
+    <FrameLayout
+        android:id="@+id/colorPickerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <com.madrapps.pikolo.HSLColorPicker
+            android:id="@+id/colorPicker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/colorValue"
+                android:digits="0123456789ABCDEF"
+                android:inputType="textCapCharacters|textNoSuggestions"
+                android:gravity="center"
+                android:maxLength="6"
+                android:padding="3dp"
+                android:layout_width="86dp"
+                android:layout_height="50dp"
+                />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/setMainColorButton"
+                android:layout_marginTop="5dp"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:textSize="14dp"
+                android:text="Set Main Color"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/colorPaletteContainer"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/colorPickerContainer"
+        android:layout_marginTop="20dp"
+        android:layout_height="300dp">
+
+        <LinearLayout
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/fetchColorButton"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:text="Fetch Colors"
+                android:layout_width="110dp"
+                android:layout_height="match_parent" />
+
+            <CheckBox
+                android:id="@+id/autoThemeCheckBox"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:text="Auto-theme"/>
+
+            <ToggleButton
+                android:id="@+id/lightDarkToggle"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:textOn="Light"
+                android:textOff="Dark"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/previewMainBackgroundColor"
+            android:layout_width="360dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:layout_marginTop="62dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/previewColorLightShade"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/colorLightShade"/>
+
+            <View
+                android:id="@+id/previewColorLightAccent"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/colorLightAccent"/>
+
+            <View
+                android:id="@+id/previewColorMainColor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/colorMainColor"/>
+
+            <View
+                android:id="@+id/previewColorDarkAccent"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/colorDarkAccent"/>
+
+            <View
+                android:id="@+id/previewColorDarkShade"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@color/colorDarkShade"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/applyPaletteButton"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="162dp"
+            android:text="Apply Palette"
+            android:layout_width="140dp"
+            android:layout_height="50dp" />
+
+    </FrameLayout>
+
+
+</android.support.constraint.ConstraintLayout>
