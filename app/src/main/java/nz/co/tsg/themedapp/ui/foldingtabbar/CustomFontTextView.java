@@ -3,6 +3,7 @@ package nz.co.tsg.themedapp.ui.foldingtabbar;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -14,7 +15,7 @@ import nz.co.tsg.themedapp.R;
  * Created by andrewkhristyan on 12/9/16.
  */
 
-public class CustomFontTextView extends TextView {
+public class CustomFontTextView extends AppCompatTextView {
 
     public CustomFontTextView(Context context) {
         this(context, null, 0);
